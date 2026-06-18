@@ -1,0 +1,33 @@
+#countlabel{
+    display: block;
+    text-align: center;
+    font-size: 10em;
+    font-family: Helvetica;
+    color:aliceblue;
+}
+#btnContainer{
+    text-align: center;
+}
+.button{
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: white;
+    background-color:hsl(214,100%,74%);
+    border-radius: 5px;
+    cursor:pointer;
+    transition: background-color 0.25s;
+}
+.button:hover{
+    background-color:hsl(214, 100%, 56%);
+    justify-content: center;
+    text-align: center;
+}
+body{
+    background-color: hsl(215, 33%, 7%);
+}
+#myH1{
+    text-align: center;
+    font-family: Helvetica;
+    color:aliceblue;
+    font-size: 3em;
+}
