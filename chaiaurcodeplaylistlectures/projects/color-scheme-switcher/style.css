@@ -1,0 +1,50 @@
+html {
+    margin: 0;
+}
+body{
+    background-color: black;
+    color: rgb(205, 183, 209);
+
+}
+
+span {
+    display: block;
+}
+
+.canvas {
+    margin: 100px auto 100px;
+    width: 80%;
+    text-align: center;
+}
+
+.button {
+    width: 100px;
+    height: 100px;
+    border: solid black 2px;
+    display: inline-block;
+}
+.button:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+#grey {
+    background: grey;
+}
+#white{
+    background: white;
+}
+#blue{
+    background: blue;
+}
+#yellow{
+    background: yellow;
+}
+#myh1{
+    font-size: 3em;
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(205, 183, 209);
+}
+
