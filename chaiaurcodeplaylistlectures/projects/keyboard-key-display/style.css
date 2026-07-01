@@ -1,0 +1,21 @@
+table,
+th,
+td {
+    border: 1px solid #e7e7e7
+}
+
+.project {
+    background-color: #1c1c1c;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+}
+.color{
+    color: aliceblue;
+    display: flex;
+    flex-direction:column;
+}
