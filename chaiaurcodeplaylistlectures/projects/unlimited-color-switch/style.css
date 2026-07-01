@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(135, 63, 63);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1{
+    text-align: center;
+    margin: 20px 0;
+}
+
+#stop{
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+#start{
+    padding: 10px 20px;
+    border-radius: 50px;
+}

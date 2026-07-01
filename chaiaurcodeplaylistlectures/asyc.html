@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Akif</h1>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+    //const sayAkif = () => {
+        //console.log("Hello Akif");
+    
+    //setTimeout(sayAkif, 2000);
+    //setTimeout(function () {
+        //console.log("Hello Akif");
+    //}, 2000); -->
+
+    //chnaging text after 2 seconds
+    const changeText = function () {
+        document.querySelector("h1").innerHTML = "Hello muhammad akif naveed!"
+    }
+    //setTimeout(changeText, 2000);
+
+    //making timeout reference
+    const changeMe = setTimeout(changeText, 2000);
+    console.log("working")
+    // clearTimeout(stopMe)
+
+    document.querySelector("#stop").addEventListener("click", function(){
+        console.log("working")
+        clearTimeout(changeMe);
+        console.log("Timeout has been cleared")
+    });
+
+</script>
+</html>
