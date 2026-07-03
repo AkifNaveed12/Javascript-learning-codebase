@@ -11,6 +11,7 @@
         <img src="" alt="" id="apiImg">
         <h1></h1>
         <h2></h2>
+        <Button id="starter">Click here for Info about Akif</Button>
     </div>
 
 </body>
@@ -30,11 +31,21 @@
         padding: 2px;
         margin: 10px;
     }
+    #starter{
+        border-radius: 10px;
+        background-color:brown;
+        color: aliceblue;
+    }
+    #starter:hover{
+        opacity: 50%;
+        background-color: #fff;
+        color: black;
+    }
 
 </style>
 <script>
     const xmlDataApiReq = new XMLHttpRequest() // object created state 1
-
+    const getButton = document.querySelector(`button`)
     //url refrence var
     const xmlURL = `https://api.github.com/users/AkifNaveed12`;
 
@@ -46,6 +57,7 @@
 
     //verifiying states are changing or not and are we getting data
     //console.log(xmlDataApiReq.readyState)
+
 
     xmlDataApiReq.onreadystatechange = function() {
         console.log(xmlDataApiReq.readyState)
@@ -61,11 +73,13 @@
             const nameApi = document.querySelector(`h1`)
             const followersApi = document.querySelector(`h2`)
 
-
-            IMG.src = imgURL
-            nameApi.textContent = `Name: ${name}`
-            followersApi.textContent = `Followers: ${Followers}`
-
+            //button event based stuff
+            getButton.addEventListener(`click`, function (){
+                IMG.src = imgURL
+                nameApi.textContent = `Name: ${name}`;
+                followersApi.textContent = `Followers: ${Followers}`;
+            });
+            
             //console.log(this.responseText)//currenty this is string
             //console.log(typeof (this.responseText)) // for conversion we use JSON.parse(this.responseText)
 
@@ -74,9 +88,5 @@
             console.log(`ERROR: ${this.responseText}`)
         }
     }
-
-
-
-
 </script>
 </html>
