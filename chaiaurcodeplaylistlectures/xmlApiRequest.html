@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hello
+</body>
+<Script>
+    const xmlApi = new XMLHttpRequest(); // make xml object first
+
+//making the url
+    const xmlURL = `https://api.github.com/users/AkifNaveed12`
+
+//making the request using open()
+    xmlApi.open(`GET`, xmlURL);// open requires method(get/post..) and string(url) as the parameter
+
+//sending the request
+    xmlApi.send();
+    console.log(`hello `)
+
+    //current state checking
+    console.log(xmlApi.readyState)
+
+    //continously state checking of request
+    xmlApi.onreadystatechange = function (){
+        console.log(xmlApi.readyState)
+    }
+</Script>
+</html>
+
+

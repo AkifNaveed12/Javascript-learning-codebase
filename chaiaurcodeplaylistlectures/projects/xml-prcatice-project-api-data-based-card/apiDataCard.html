@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data card task API</title>
+    
+</head>
+<body>
+    <div id="cardDiv">
+        <img src="" alt="" id="apiImg">
+        <h1></h1>
+        <h2></h2>
+    </div>
+
+</body>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:antiquewhite;
+        color: black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2em;
+        padding: 2px;
+        margin: 10px;
+    }
+
+</style>
+<script>
+    const xmlDataApiReq = new XMLHttpRequest() // object created state 1
+
+    //url refrence var
+    const xmlURL = `https://api.github.com/users/AkifNaveed12`;
+
+    //opened req state 2
+    xmlDataApiReq.open(`GET` , xmlURL);
+
+    //sending request
+    xmlDataApiReq.send()
+
+    //verifiying states are changing or not and are we getting data
+    //console.log(xmlDataApiReq.readyState)
+
+    xmlDataApiReq.onreadystatechange = function() {
+        console.log(xmlDataApiReq.readyState)
+        if(xmlDataApiReq.readyState === 4 && xmlDataApiReq.status === 200){
+            const response = JSON.parse(this.responseText)
+            const imgURL = response.avatar_url
+            const Followers = response.followers
+            const name = response.login
+
+
+            const cardDIV = document.getElementById(`cardDiv`)
+            const IMG = document.getElementById(`apiImg`)
+            const nameApi = document.querySelector(`h1`)
+            const followersApi = document.querySelector(`h2`)
+
+
+            IMG.src = imgURL
+            nameApi.textContent = `Name: ${name}`
+            followersApi.textContent = `Followers: ${Followers}`
+
+            //console.log(this.responseText)//currenty this is string
+            //console.log(typeof (this.responseText)) // for conversion we use JSON.parse(this.responseText)
+
+        }
+        else{
+            console.log(`ERROR: ${this.responseText}`)
+        }
+    }
+
+
+
+
+</script>
+</html>
