@@ -25,3 +25,13 @@ new Promise(function(resolve, reject){
 }).then(function(){
     console.log(`async 2 then executed`)
 })
+
+//promise 3, data parsing
+
+const promiseThree = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        resolve({userName : `Akif Naveed Malik`, email : `hello.akifnaveed@gmail.com`})
+    }, 1000)
+}).then(function(user){
+    console.log(user)
+})
