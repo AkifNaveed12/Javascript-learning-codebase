@@ -6,9 +6,7 @@ const promiseOne = new Promise(function(resolve, reject){
         console.log(`async task executed!`);
         resolve()//connection with the resolve arg
     }, 1000)
-
 })//tales 2 arguments (resolve, reject)
-
 promiseOne.then(function(){ // promise consumption,  auto argument recieving, value is returned
     console.log(`promise consumption!`)
 })
@@ -16,7 +14,6 @@ promiseOne.then(function(){ // promise consumption,  auto argument recieving, va
 
 
 //promise 2
-
 new Promise(function(resolve, reject){
     setTimeout(function(){
         console.log(`promise async 2 is executed!`)
@@ -26,8 +23,9 @@ new Promise(function(resolve, reject){
     console.log(`async 2 then executed`)
 })
 
-//promise 3, data parsing
 
+
+//promise 3, data parsing
 const promiseThree = new Promise(function(resolve, reject){
     setTimeout(function(){
         resolve({userName : `Akif Naveed Malik`, email : `hello.akifnaveed@gmail.com`})
