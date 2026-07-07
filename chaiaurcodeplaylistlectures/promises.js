@@ -33,3 +33,63 @@ const promiseThree = new Promise(function(resolve, reject){
 }).then(function(user){
     console.log(user)
 })
+
+//call back chaining promise 4, learning how to avoid callback hell
+//approach one (wrong one not wrorking one!)
+// const promiseFour  = new Promise(function(resolve, reject){
+//     setTimeout(function() {
+//         let error = true
+//         if(!error){
+//             resolve({userName : `Muhammad Akif` , password : `123`})
+//         }
+//         else{
+//             reject(`ERROR : Something went Wrong!`)//error cases
+//         }
+//     },1000)
+// })
+
+// const username = promiseFour.then((user) =>{
+//     console.log(user)
+//     return user.userName
+// })
+// console.log(username) // doesnt works!
+
+//correct way 
+// const promiseFour  = new Promise(function(resolve, reject){
+//     setTimeout(function() {
+//         let error = true
+//         if(!error){
+//             resolve({userName : `Muhammad Akif` , password : `123`})
+//         }
+//         else{
+//             reject(`ERROR : Something went Wrong!`)//error cases
+//         }
+//     },1000)
+// }).then((user) =>{
+//     console.log(user)
+//     return user.userName
+// }).then((username) =>{// chaining of call back, the returned user.userName becomes the paramete rof the 2nd then()
+//     console.log(`the extracted username is :${username}`)
+// }).catch(function(err) {
+//     console.log(err)
+// })
+
+//false error case
+const promiseFour  = new Promise(function(resolve, reject){
+    setTimeout(function() {
+        let error = false
+        if(!error){
+            resolve({userName : `Muhammad Akif` , password : `123`})
+        }
+        else{
+            reject(`ERROR : Something went Wrong!`)//error cases
+        }
+    },1000)
+}).then((user) =>{
+    console.log(user)
+    return user.userName
+}).then((username) =>{// chaining of call back, the returned user.userName becomes the paramete rof the 2nd then()
+    console.log(`the extracted username is :${username}`)
+}).catch(function(err) {
+    console.log(err)
+})
