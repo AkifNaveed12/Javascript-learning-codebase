@@ -117,22 +117,51 @@
 // )
 
 //promise 6 : using async await 
-const promiseSix = new Promise(function (resolve, reject){
+// const promiseSix = new Promise(function (resolve, reject){
+//     setTimeout(function(){
+//         let err1 = false
+//         if(!err1){
+//             resolve({semester : "Five - 5", gpa : "3.94/4.0", cgpa : "3.70/4.0"})
+//         }
+//         else{
+//             reject(`ERROR 06: Something went wrong in promise 6`)
+//         }
+//     }, 1000)
+    
+// })
+
+// async function consumePromiseSix(){
+//     const response = await promiseSix
+//     console.log(response)
+// }
+
+// consumePromiseSix()
+
+//promise 7 same approach but with proper error handling using try catch()
+const promiseSeven = new Promise(function (resolve, reject){
     setTimeout(function(){
         let err1 = false
         if(!err1){
-            resolve({semester : "Five - 5", gpa : "3.94/4.0", cgpa : "3.70/4.0"})
+            resolve({semester : "Five - 5", gpa : "3.94/4.0", cgpa : "3.70/4.0", section : "BSE - 5B"})
         }
         else{
-            reject(`ERROR 06: Something went wrong in promise 6`)
+            reject(`ERROR 07: Something went wrong in promise 6`)
         }
     }, 1000)
     
 })
 
-async function consumePromiseSix(){
-    const response = await promiseSix
-    console.log(response)
+async function consumePromiseSeven(){ // graceful error handling now
+    try{
+        const response = await promiseSeven
+        console.log(response)
+    }
+    catch(error){
+        console.log(error)
+    }
 }
+consumePromiseSeven()
 
-consumePromiseSix()
+//key notes we have to approaches like using .then(), catch(), finally() or by using try(), catch() inside async/ await
+
+
