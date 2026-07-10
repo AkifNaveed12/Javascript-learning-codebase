@@ -1,4 +1,4 @@
-//our target
+//our target  (challenge)
 // let myName = "akif             "
 // console.log(myName.trueLenght()) // isko by default banana hmara target ha aur ye globally avalible hona chiye her object k sath 
 
@@ -20,4 +20,16 @@ Object.prototype.akif = function (){
 
 //now akif() will work with every object when called
 
-heroPower.akif()
+//heroPower.akif()
+
+
+// now solving the challenge
+let anotherName = "AkifNaveed         "
+
+String.prototype.trueLenght = function (){
+    console.log(`${this}`)
+    console.log(`the lenght is ${this.trim().length}`)
+}
+
+anotherName.trueLenght()
+"abc           ".trueLenght()
