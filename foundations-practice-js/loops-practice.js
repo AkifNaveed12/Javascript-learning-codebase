@@ -51,3 +51,14 @@
 //     sum += obj[Key]
 // }
 // console.log(`sum: ${sum}`)
+
+//task 5 : Use a while loop to find the first power of 2 greater than 10,000
+// let i = 0
+// while(true){
+//     let no = 2**i;
+//     if(no > 10000){
+//         console.log(`the no is : ${no} at ireration no and 2 power : ${i}`)
+//         break;
+//     }
+//     i+=1
+// }
